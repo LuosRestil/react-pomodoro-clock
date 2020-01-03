@@ -4,38 +4,205 @@
   box-sizing: border-box;
 }
 
-body {
-}
-
 #clock-div {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgb(240, 240, 240) 75%,
+    rgb(172, 172, 172) 100%
+  );
+  color: rgb(80, 80, 80);
 }
 
-.setup-label {
+#content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#setup-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 65%;
+  font-size: 3rem;
+}
+
+.setup-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -0.75rem;
+  margin-bottom: 1rem;
 }
 
 .setup-display {
+  margin-top: -1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+button {
+  background-color: white;
+  box-shadow: 1px 3px 5px #888888;
+  border-radius: 5px;
+  color: rgb(80, 80, 80);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .setup-button {
+  font-size: 0.5em;
+  width: 30%;
+}
+
+#timer-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5rem;
 }
 
 #timer-label {
+  background-color: transparent;
 }
 
 #time-left {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.5em;
+  margin-top: -1rem;
 }
 
 .session-readout {
+  background: -webkit-linear-gradient(rgb(47, 170, 53), rgb(75, 236, 89));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .break-readout {
+  background: -webkit-linear-gradient(rgb(155, 27, 27), rgb(252, 0, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
+#action-button-container {
+  margin-top: 1rem;
+}
 .action-button {
+  font-size: 0.4em;
+  width: 40%;
+  padding: 0.5rem;
+  color: rgb(80, 80, 80);
 }
 
-#start-stop {
+@media (max-width: 1200px) {
+  #setup-container {
+    width: 85%;
+  }
 }
 
-#reset {
+@media (max-width: 880px) {
+  #clock-div {
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #setup-container {
+    font-size: 2.5rem;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .setup-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.75rem;
+    margin-bottom: 1rem;
+  }
+  .setup-button {
+    font-size: 0.75em;
+    width: 40%;
+  }
+  #timer-container {
+    margin-top: -1rem;
+  }
+  #time-left {
+    font-size: 12rem;
+    color: black;
+  }
+
+  #action-button-container {
+    font-size: 0.75em;
+    width: 75%;
+    color: rgb(80, 80, 80);
+  }
+}
+
+@media (max-width: 880px) and (orientation: landscape) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  #clock-div {
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  #setup-container {
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: center;
+  }
+  .setup-button {
+    font-size: 0.75em;
+    width: 40%;
+  }
+  #timer-container {
+    margin-top: -1rem;
+  }
+  #time-left {
+    font-size: 8rem;
+  }
+
+  #action-button-container {
+    font-size: 0.75em;
+    width: 100%;
+    color: rgb(80, 80, 80);
+  }
+}
+
+@media (max-width: 750px) and (orientation: landscape) {
+  .button-container {
+    width: 20%;
+  }
+  #action-button-container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 525px) {
+  #time-left {
+    font-size: 6rem;
+  }
 }

@@ -103,69 +103,95 @@ class App extends React.Component {
   render() {
     return (
       <div id="clock-div">
-        <div className="setup-label" id="break-label">
-          Break Length
-        </div>
-        <div className="setup-display" id="break-length">
-          {this.state.breakLength}
-        </div>
-        <button
-          className="setup-button"
-          id="break-increment"
-          onClick={this.breakIncrement}
-        >
-          +
-        </button>
-        <button
-          className="setup-button"
-          id="break-decrement"
-          onClick={this.breakDecrement}
-        >
-          -
-        </button>
-        <div className="setup-label" id="session-label">
-          Session Length
-        </div>
-        <div className="setup-display" id="session-length">
-          {this.state.sessionLength}
-        </div>
-        <button
-          className="setup-button"
-          id="session-increment"
-          onClick={this.sessionIncrement}
-        >
-          +
-        </button>
-        <button
-          className="setup-button"
-          id="session-decrement"
-          onClick={this.sessionDecrement}
-        >
-          -
-        </button>
-        <div id="timer-label">{this.state.timerType}</div>
+        <div id="content-container">
+          <div id="setup-container">
+            <div className="setup-block">
+              <div className="setup-label" id="break-label">
+                Break Length
+              </div>
+              <div className="setup-display" id="break-length">
+                {this.state.breakLength}
+              </div>
+              <div className="button-container">
+                <button
+                  type="button"
+                  className="setup-button"
+                  id="break-increment"
+                  onClick={this.breakIncrement}
+                >
+                  +
+                </button>
+                <button
+                  typ="button"
+                  className="setup-button"
+                  id="break-decrement"
+                  onClick={this.breakDecrement}
+                >
+                  -
+                </button>
+              </div>
+            </div>
+            <div className="setup-block">
+              <div className="setup-label" id="session-label">
+                Session Length
+              </div>
+              <div className="setup-display" id="session-length">
+                {this.state.sessionLength}
+              </div>
+              <div className="button-container">
+                <button
+                  className="setup-button"
+                  id="session-increment"
+                  onClick={this.sessionIncrement}
+                >
+                  +
+                </button>
+                <button
+                  className="setup-button"
+                  id="session-decrement"
+                  onClick={this.sessionDecrement}
+                >
+                  -
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <div
-          className={
-            this.state.timerType === "Session"
-              ? "session-readout"
-              : "break-readout"
-          }
-          id="time-left"
-        >
-          {this.clockFormat()}
+          <div id="timer-container">
+            <div id="timer-label">{this.state.timerType}</div>
+
+            <div
+              className={
+                this.state.timerType === "Session"
+                  ? "session-readout"
+                  : "break-readout"
+              }
+              id="time-left"
+            >
+              {this.clockFormat()}
+            </div>
+            <div className="button-container" id="action-button-container">
+              <button
+                type="button"
+                className="action-button"
+                id="start-stop"
+                onClick={this.startStop}
+              >
+                <i className="fas fa-play"></i>&nbsp;/&nbsp;
+                <i className="fas fa-pause"></i>
+              </button>
+              <button
+                type="button"
+                className="action-button"
+                id="reset"
+                onClick={this.reset}
+              >
+                Reset
+              </button>
+            </div>
+          </div>
         </div>
 
-        <button
-          className="action-button"
-          id="start-stop"
-          onClick={this.startStop}
-        >
-          Start/Stop
-        </button>
-        <button className="action-button" id="reset" onClick={this.reset}>
-          Reset
-        </button>
         <audio
           src="https://luosrestil.github.io/FCCimages/emergency_bell_alarm_small_ring.mp3"
           id="beep"
