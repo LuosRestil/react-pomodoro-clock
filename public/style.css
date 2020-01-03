@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+#clock-div {
+}
+
+.setup-label {
+}
+
+.setup-display {
+}
+
+.setup-button {
+}
+
+#timer-label {
+}
+
+#time-left {
+}
+
+.session-readout {
+}
+
+.break-readout {
+}
+
+.action-button {
+}
+
+#start-stop {
+}
+
+#reset {
+}
